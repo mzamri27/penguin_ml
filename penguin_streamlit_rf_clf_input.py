@@ -1,8 +1,17 @@
 import streamlit as st
 import pickle
+import pandas as pd
+
 st.title('Penguin Classifier')
 st.write("This app uses 6 inputs to predict the species of penguin using a "
 "model built on the Palmer's Penguin's dataset. Use the form below to get started!")
+
+# display the data
+option = st.radio("Do you want to display the data?",["Yes", "No")
+if option == "Yes":
+    penguin_df = pd.read_csv("penguins.csv")
+    st.write(penguin_df)
+                                                  
 
 # load pickle files
 rf_pickle = open('random_forest_penguin.pickle', 'rb')
