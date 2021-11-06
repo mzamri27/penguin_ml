@@ -35,7 +35,9 @@ if sex == 'Female':
 elif sex == 'Male':
     sex_male = 1
 
-new_prediction = rfc.predict([[bill_length, bill_depth, flipper_length,body_mass,
-island_biscoe, island_dream,island_torgerson, sex_female, sex_male]])
-prediction_species = unique_penguin_mapping[new_prediction][0]
-st.write('We predict your penguin is of the {} species'.format(prediction_species))
+if st.button("Classify!"):
+    new_prediction = rfc.predict([[bill_length, bill_depth, flipper_length,body_mass,
+    island_biscoe, island_dream,island_torgerson, sex_female, sex_male]])
+    prediction_species = unique_penguin_mapping[new_prediction][0]
+    st.write('We predict your penguin is of the {} species'.format(prediction_species))
+
